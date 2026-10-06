@@ -1,4 +1,4 @@
-
+---
 
 # Dott: Local Site Server & Temporary Public Tunnel
 
@@ -79,16 +79,17 @@ Instala una distribución Linux compatible dentro de WSL2 y utiliza el comando c
 
 ## Descargar
 
-Clona e inicializa el proyecto ejecutando:
+Ejecuta los siguientes comandos para clonar el repositorio, acceder a la carpeta y ejecutar la herramienta:
 
 ```bash
-git clone https://github.com/dott152/web1.git
-cd web1
-chmod +x dott.sh
+git clone https://github.com/dott152/dott.git
 
 ```
 
-O puedes ejecutar el programa directamente con Bash:
+```bash
+cd dott
+
+```
 
 ```bash
 bash dott.sh
@@ -100,7 +101,7 @@ bash dott.sh
 ## Estructura de Archivos
 
 ```text
-web1/
+dott/
 ├── dott.sh
 ├── run-docker.sh
 ├── Dockerfile
@@ -161,7 +162,7 @@ http://127.0.0.1:8080/
 
 ### Modo Público
 
-Selecciona la opción `2) Cloudflare Tunnel`. Dott iniciará el servidor local y creará un enlace temporal pública mediante Cloudflare Tunnel.
+Selecciona la opción `2) Cloudflare Tunnel`. Dott iniciará el servidor local y creará un enlace temporal público mediante Cloudflare Tunnel.
 
 El programa solicitará confirmación antes de publicar el sitio. El enlace generado tendrá un formato similar a:
 
