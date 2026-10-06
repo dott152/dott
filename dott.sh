@@ -18,8 +18,8 @@ NC='\033[0m'
 # CONFIGURACIÓN Y VARIABLES
 # ==========================================
 BASE_DIR=$(realpath "$(dirname "${BASH_SOURCE[0]}")")
-SITES_DIR="$BASE_DIR/.sites"
-SERVER_DIR="$BASE_DIR/.server"
+SITES_DIR="$BASE_DIR/sites"
+SERVER_DIR="$BASE_DIR/server"
 HOST="127.0.0.1"
 PORT="8080"
 SERVER_PID=""
