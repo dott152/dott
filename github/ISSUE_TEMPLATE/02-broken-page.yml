@@ -1,0 +1,18 @@
+name: Website Issue
+description: Report a problem serving a site from .sites
+title: "[Website Issue]: "
+labels: ["bug"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+              ***If you can fix it, consider creating a PR. That would be appreciated.***
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What is not working?
+      description: Describe the issue with your own test site and include relevant error output.
+    validations:
+      required: true
