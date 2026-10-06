@@ -8,7 +8,7 @@ Uso autorizado: utiliza Dott únicamente con sitios y sistemas propios o con aut
 
 Características
 
-Servidor local con PHP.
+Servidor web local mediante PHP.
 
 Selección de sitio y puerto.
 
@@ -24,6 +24,32 @@ Sin acortadores ni ocultación de enlaces.
 
 Sin recolección de credenciales ni visitantes.
 
+Compatibilidad
+
+Dott está diseñado para sistemas Linux con Bash, PHP CLI y curl.
+
+Compatible o pensado para funcionar en:
+
+Arch Linux
+
+Manjaro
+
+Debian
+
+Ubuntu
+
+Linux Mint
+
+Fedora
+
+Kali Linux
+
+Raspberry Pi OS
+
+WSL2
+
+También puede funcionar en otras distribuciones Linux que proporcionen los requisitos necesarios.
+
 Requisitos
 
 Bash
@@ -32,22 +58,43 @@ PHP CLI
 
 curl
 
-Internet para utilizar el túnel público si cloudflared no está instalado.
-
-Arch Linux
-sudo pacman -S bash php curl
+Internet para utilizar Cloudflare Tunnel si cloudflared no está instalado.
 
 Instalación
+Arch Linux / Manjaro
+sudo pacman -S bash php curl
+
+Debian / Ubuntu / Linux Mint / Raspberry Pi OS
+sudo apt update
+sudo apt install bash php-cli curl
+
+Fedora
+sudo dnf install bash php-cli curl
+
+WSL2
+
+Instala una distribución Linux compatible dentro de WSL2 y utiliza el comando de instalación correspondiente a esa distribución.
+
+Descargar
 
 Clona el repositorio:
 
 git clone https://github.com/dott152/web1.git
+
+
+Entra en el directorio:
+
 cd web1
 
 
-Dale permisos al script:
+Dale permisos de ejecución:
 
 chmod +x dott.sh
+
+
+También puedes ejecutar el programa directamente con Bash:
+
+bash dott.sh
 
 Estructura
 web1/
@@ -73,7 +120,7 @@ sites/
     └── images/
 
 
-También puedes utilizar index.php:
+También puedes utilizar PHP:
 
 sites/
 └── mi-sitio/
@@ -86,7 +133,7 @@ Inicia Dott:
 bash dott.sh
 
 
-Selecciona uno de los sitios disponibles y el puerto que quieras utilizar.
+Selecciona el sitio que quieres probar y el puerto.
 
 El puerto predeterminado es:
 
@@ -104,7 +151,7 @@ El sitio estará disponible en:
 http://127.0.0.1:8080/
 
 
-Este modo no crea un enlace público.
+Este modo no crea ningún enlace público.
 
 Modo público
 
@@ -113,20 +160,27 @@ Selecciona:
 2) Cloudflare Tunnel
 
 
-Dott iniciará el sitio localmente y creará un enlace temporal trycloudflare.com.
+Dott iniciará el servidor local y creará un enlace temporal mediante Cloudflare Tunnel.
 
-El programa pedirá confirmación antes de publicar el sitio.
+El programa solicitará confirmación antes de publicar el sitio.
 
-Cualquier persona que tenga el enlace podrá acceder mientras el túnel esté activo. No publiques información privada ni servicios que no tengas autorización para exponer.
+El enlace tendrá un formato similar a:
+
+https://example-name.trycloudflare.com
+
+
+Cualquier persona que tenga el enlace puede acceder al sitio mientras el túnel esté activo. No publiques información privada ni servicios que no tengas autorización para exponer.
 
 Docker
 
-Ejecuta:
+Para ejecutar el proyecto mediante Docker:
 
 bash run-docker.sh
 
 
-El proyecto utiliza sites/ para los sitios que quieres servir.
+Los sitios utilizados por Dott se encuentran en:
+
+sites/
 
 Detener
 
@@ -141,10 +195,10 @@ Licencia
 
 Dott se distribuye bajo la GNU General Public License v3.0 (GPL-3.0).
 
-Consulta LICENSE para los términos completos.
+Consulta LICENSE para conocer los términos completos.
 
 Aviso
 
-Dott es una herramienta para desarrollo, pruebas y demostraciones de sitios propios.
+Dott está destinado al desarrollo, pruebas y demostraciones de sitios propios.
 
 El usuario es responsable del contenido que ejecute o publique mediante la herramienta.
